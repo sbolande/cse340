@@ -3,7 +3,7 @@
     --color-one: #bababa;
     --color-two: #8d8d8d;
     --color-three: #a6cbeb;
-    --color-four: #4c96d7;
+    --color-four: #1e5585;
     --color-five: #3a3a3a;
     --color-six: #ffffff;
 }
@@ -78,7 +78,7 @@ body {
 #own-today {
     display: inline-block;
     border: 1px solid var(--color-five);
-    color: var(--color-five);
+    color: var(--color-six);
     background-color: var(--color-four);
     width: 140px;
     height: 45px;
