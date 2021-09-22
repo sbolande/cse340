@@ -122,6 +122,11 @@ body {
     height: 50px;
     margin: 10px;
 }
+/* ADDITIONAL CONTENT */
+.content__data {
+    margin-left: 10px;
+    margin-top: -10px;
+}
 
 /***** FOOTER *****/
 footer {
