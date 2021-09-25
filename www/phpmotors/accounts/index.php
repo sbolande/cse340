@@ -1,4 +1,4 @@
-<? // MAIN CONTROLLER
+<? // ACCOUNTS CONTROLLER
     // get the phpmotorsConnect() function
     require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/library/connections.php");
     // get the main model
@@ -19,10 +19,5 @@
         $action = filter_input(INPUT_GET, 'action');
     }
     switch ($action) {
-        case 'template':
-            include 'view/template.php';
-            break;
-        default:
-            include 'view/home.php';
     }
 ?>
