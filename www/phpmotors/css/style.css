@@ -32,14 +32,17 @@ body {
     background-color: var(--color-five);
     padding: 8px;
     margin-top: 6px;
+    list-style-type: none;
+    overflow: hidden;
 }
+#navbar li { float: left; }
 .navbar-item {
     text-decoration: none;
     color: var(--color-six);
     margin: 5px;
+    padding: 0px 5px;
 }
 .navbar-item:hover {
-    color: var(--color-five);
     background-color: var(--color-four);
     height: 20px;
     padding-top: 10px;
