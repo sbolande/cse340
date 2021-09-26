@@ -26,7 +26,7 @@ body {
     text-decoration: none;
     color: var(--color-five);
 }
-#header-top #account:active { color: var(--color-three); }
+#header-top #account:hover { color: var(--color-three); }
 /* NAVBAR */
 #navbar {
     background-color: var(--color-five);
@@ -131,22 +131,22 @@ body {
     margin-top: -10px;
 }
 /* LOGIN/SIGNUP FORM */
-.login {
+.form {
     max-width: 400px;
 }
-.login ul {
+.form ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-.login li {
+.form li {
     display: block;
     padding: 9px;
     border: 1px solid var(--color-five);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border-radius: 3px;
 }
-.login li:last-child {
+.form li:last-child {
     border: none;
     margin-bottom: 0px;
     text-align: center;
@@ -160,7 +160,7 @@ label {
     color: var(--color-four);
     overflow: hidden;
 }
-.login input {
+.form input {
     box-sizing: border-box;
     width: 100%;
     display: block;
@@ -171,7 +171,7 @@ label {
     font-size: 16px;
     padding: 0px;
 }
-.login li > .hint {
+.form li > .hint {
     background-color: var(--color-one);
     display: block;
     border: none;
@@ -183,14 +183,16 @@ label {
     font-size: 11px;
     cursor: pointer;
 }
-.login li > .hint:hover { background-color: var(--color-two); }
+.form li > .hint:hover { background-color: var(--color-two); }
 #submit {
     background-color: var(--color-four);
     color: var(--color-six);
 }
-#submit:hover {
-    color: var(--color-one);
+#submit:hover { color: var(--color-one); }
+#alt-form-link {
+    color: var(--color-five);
 }
+#alt-form-link:hover { color: var(--color-three); }
 
 /***** FOOTER *****/
 footer {
