@@ -31,7 +31,7 @@
                         <li><input id="submit" type="submit" value="Create Account"></li>
                     </ul>
                 </form>
-                <div>Already have an account? <a id="alt-form-link" href="/phpmotors/index.php?action=login" title="Return to login">Login</a></div>
+                <p id="alt-form">Already have an account? <a id="alt-form-link" href="/phpmotors/accounts/index.php?action=login" title="Return to login">Login</a></p>
             </div>
         </div>
         <? require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/view/modules/footer.php"); ?>

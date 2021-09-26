@@ -189,6 +189,7 @@ label {
     color: var(--color-six);
 }
 #submit:hover { color: var(--color-one); }
+#alt-form { font-size: 20px; }
 #alt-form-link {
     color: var(--color-five);
 }
