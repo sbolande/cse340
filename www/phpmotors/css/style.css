@@ -130,6 +130,67 @@ body {
     margin-left: 10px;
     margin-top: -10px;
 }
+/* LOGIN/SIGNUP FORM */
+.login {
+    max-width: 400px;
+}
+.login ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.login li {
+    display: block;
+    padding: 9px;
+    border: 1px solid var(--color-five);
+    margin-bottom: 30px;
+    border-radius: 3px;
+}
+.login li:last-child {
+    border: none;
+    margin-bottom: 0px;
+    text-align: center;
+}
+label {
+    display: block;
+    float: left;
+    margin-top: -17px;
+    height: 14px;
+    padding: 5px 0px;
+    color: var(--color-four);
+    overflow: hidden;
+}
+.login input {
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    outline: none;
+    border: none;
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+    padding: 0px;
+}
+.login li > .hint {
+    background-color: var(--color-one);
+    display: block;
+    border: none;
+    padding: 3px;
+    margin: 0 -9px -9px -9px;
+    text-align: center;
+    border-radius: 0px 0px 3px 3px;
+    color: #3a3a3a;
+    font-size: 11px;
+    cursor: pointer;
+}
+.login li > .hint:hover { background-color: var(--color-two); }
+#submit {
+    background-color: var(--color-four);
+    color: var(--color-six);
+}
+#submit:hover {
+    color: var(--color-one);
+}
 
 /***** FOOTER *****/
 footer {
