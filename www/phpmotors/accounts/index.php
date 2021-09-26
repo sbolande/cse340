@@ -19,5 +19,13 @@
         $action = filter_input(INPUT_GET, 'action');
     }
     switch ($action) {
+        case 'login':
+            include '../view/login.php';
+            break;
+        case 'signup':
+            include '../view/signup.php';
+            break;
+        default:
+            include '../view/login.php';
     }
 ?>

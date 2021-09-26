@@ -2,13 +2,13 @@
 <html lang="en">
     <head>
         <title>PHP Motors - 500</title>
-        <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="http://lvh.me/phpmotors/css/style.css" media="screen">
     </head>
     <body>
         <header>
             <div id="header-top">
                 <img src="http://lvh.me/phpmotors/images/site/logo.png" id="logo" alt="PHP Motors">
-                <a id="account" href="" title="My Account">My Account</a>
+                <a id="account" href="/phpmotors/accounts/index.php?action=login" title="My Account">My Account</a>
             </div>
             <ul id="navbar">
                 <li><a class="navbar-item" href="/phpmotors/index.php" title="View the PHP Motors home page">Home</a></li>
