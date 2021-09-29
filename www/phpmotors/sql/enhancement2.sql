@@ -4,13 +4,13 @@ INSERT INTO clients
 , clientLastname
 , clientEmail
 , clientPassword
-, comment)
+, comment )
 VALUES
- ('Tony'
- ,'Stark'
- ,'tony@starkent.com'
- ,'Iam1ronM@n'
- ,'I am the real Ironman');
+( 'Tony'
+, 'Stark'
+, 'tony@starkent.com'
+, 'Iam1ronM@n'
+, 'I am the real Ironman' );
 
 -- MODIFY Tony Stark clientlevel
 UPDATE clients 
