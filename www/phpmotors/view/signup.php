@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>PHP Motors - Login</title>
+        <title>PHP Motors - Register</title>
         <link rel="stylesheet" type="text/css" href="http://lvh.me/phpmotors/css/style.css" media="screen">
     </head>
     <body>
         <? require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/view/modules/header.php"); ?>
         <div id="content">
-            <h1>Login</h1>
+            <h1>Registration</h1>
             <div class="content__data">
                 <form class="form" method="POST" action="javascript:void(0);" name="login">
                     <ul>
