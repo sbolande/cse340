@@ -8,9 +8,6 @@
         $sql = 'INSERT INTO clients (clientFirstname, clientLastname,clientEmail, clientPassword) VALUES (:clientFirstname, :clientLastname, :clientEmail, :clientPassword)';
         // Create the prepared statement using the phpmotors connection
         $stmt = $db->prepare($sql);
-        // The next four lines replace the placeholders in the SQL
-        // statement with the actual values in the variables
-        // and tells the database the type of data it is
         $stmt->bindValue(':clientFirstname', $clientFirstname, PDO::PARAM_STR);
         $stmt->bindValue(':clientLastname', $clientLastname, PDO::PARAM_STR);
         $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
