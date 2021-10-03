@@ -7,7 +7,7 @@
     <body>
         <? require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/view/modules/header.php"); ?>
         <div id="content">
-            <h1>Create a New Classification</h1>
+            <h1>Add a New Classification</h1>
             <div class="content__data">
                 <?
                     if (isset($message)) {
