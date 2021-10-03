@@ -24,14 +24,14 @@
         case 'login':
             include '../view/login.php';
             break;
-        case 'signup':
-            include '../view/signup.php';
+        case 'registration':
+            include '../view/registration.php';
             break;
         case 'register':
-            $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
-            $clientLastname = filter_input(INPUT_POST, 'clientLastname');
-            $clientEmail = filter_input(INPUT_POST, 'clientEmail');
-            $clientPassword = filter_input(INPUT_POST, 'clientPassword');
+            $clientFirstname = filter_input(INPUT_POST, 'fname');
+            $clientLastname = filter_input(INPUT_POST, 'lname');
+            $clientEmail = filter_input(INPUT_POST, 'email');
+            $clientPassword = filter_input(INPUT_POST, 'password');
 
             // check for missing inputs
             if(empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($clientPassword)){

@@ -33,7 +33,7 @@
                             <input type="password" name="password" id="password" required>
                             <span id="showPass" class="hint" onclick="togglePassword()">Show Password</span>
                         </li>
-                        <li><input id="submit register-btn" type="submit" value="Create Account"></li>
+                        <li><input id="submit" type="submit" value="Create Account"></li>
                     </ul>
                     <input type="hidden" name="action" value="register">
                 </form>
