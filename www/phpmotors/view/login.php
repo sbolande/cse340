@@ -9,7 +9,12 @@
         <div id="content">
             <h1>Login</h1>
             <div class="content__data">
-                <form class="form" method="POST" action="javascript:void(0);" name="login">
+                <?
+                    if (isset($message)) {
+                        echo $message;
+                    }
+                ?>
+                <form class="form" method="post" action="javascript:void(0);" name="login">
                     <ul>
                         <li>
                             <label for="email">Email</label>

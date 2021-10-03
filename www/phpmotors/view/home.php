@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>PHP Motors - Home</title>
-        <link rel="stylesheet" type="text/css" href="http://lvh.me/phpmotors/css/style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/phpmotors/css/style.css" media="screen">
     </head>
     <body>
         <? require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/view/modules/header.php"); ?>
