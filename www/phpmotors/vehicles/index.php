@@ -40,14 +40,14 @@
 
             // check for missing input
             if(empty($classificationName)) {
-                $message = '<p>Please provide information for all empty form fields.</p>';
+                $message = '<p class="errorMsg">Please provide information for all empty form fields.</p>';
                 include '../view/add-classification.php';
                 exit;
             }
             // check for already existing classification
             foreach ($classifications as $classification) {
                 if ($classificationName == $classification['classificationName']) {
-                    $message = "<p>The $classificationName classification already exists!</p>";
+                    $message = "<p class='errorMsg'>The $classificationName classification already exists!</p>";
                     include '../view/add-classification.php';
                     exit;
                 }
@@ -60,7 +60,7 @@
                 header('Location: /phpmotors/vehicles/index.php');
                 exit;
             } else {
-                $message = "<p>Sorry, but adding the classification failed. Please try again.</p>";
+                $message = "<p class='errorMsg'>Sorry, but adding the classification failed. Please try again.</p>";
                 include '../view/add-classification.php';
                 exit;
             }
@@ -82,7 +82,7 @@
                empty($invImage) || empty($invThumbnail) || empty($invPrice) ||
                empty($invStock) || empty($invColor) || empty($classificationId)
             ) {
-                $message = '<p>Please provide information for all empty form fields.</p>';
+                $message = '<p class="errorMsg">Please provide information for all empty form fields.</p>';
                 include '../view/add-vehicle.php';
                 exit;
             }
@@ -93,11 +93,11 @@
 
             // Check and report the result
             if($addVehicleOutcome === 1) {
-                $message = "<p>$invMake successfully added!</p>";
+                $message = "<p class='successMsg'>$invMake successfully added!</p>";
                 include '../view/add-vehicle.php';
                 exit;
             } else {
-                $message = "<p>Sorry, but adding the vehicle failed. Please try again.</p>";
+                $message = "<p class='errorMsg'>Sorry, but adding the vehicle failed. Please try again.</p>";
                 include '../view/add-vehicle.php';
                 exit;
             }
