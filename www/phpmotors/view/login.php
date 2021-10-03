@@ -17,12 +17,12 @@
                 <form class="form" method="post" action="javascript:void(0);" name="login">
                     <ul>
                         <li>
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email" required>
+                            <label for="clientEmail">Email</label>
+                            <input type="email" name="clientEmail" id="clientEmail" required>
                         </li>
                         <li>
-                            <label for="password">Password</label>
-                            <input type="password" name="password" id="password" required>
+                            <label for="clientPassword">Password</label>
+                            <input type="password" name="clientPassword" id="clientPassword" required>
                             <span id="showPass" class="hint" onclick="togglePassword()">Show Password</span>
                         </li>
                         <li><input id="submit" type="submit" value="Login"></li>
@@ -34,7 +34,7 @@
         <? require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/view/modules/footer.php"); ?>
         <script>
             function togglePassword() {
-                let password = document.forms['login'].elements['password'];
+                let password = document.forms['login'].elements['clientPassword'];
                 password.setAttribute('type', password.getAttribute('type') === 'password' ? 'text' : 'password');
             };
             // set first input to focused element or active element
