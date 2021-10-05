@@ -130,6 +130,8 @@ body {
     margin-left: 10px;
     margin-top: -10px;
 }
+.errorMsg { color: red; }
+/* .successMsg {} */
 
 /******************** FORMS ********************/
 .form {
@@ -207,11 +209,11 @@ label {
     color: var(--color-six);
 }
 #submit:hover { color: var(--color-one); }
-#alt-form { font-size: 20px; }
-#alt-form-link {
+.alt-form { font-size: 20px; }
+.alt-form-link {
     color: var(--color-five);
 }
-#alt-form-link:hover { color: var(--color-three); }
+.alt-form-link:hover { color: var(--color-three); }
 
 /******************** FOOTER ********************/
 footer {
@@ -266,11 +268,6 @@ footer hr {
 }
 
 /*** TODO
-
-#invPrice
 .errorMsg
 .successMsg
-input:invalid
-input:valid?
-
 ***/

@@ -28,7 +28,7 @@
                         <li><input id="submit" type="submit" value="Login"></li>
                     </ul>
                 </form>
-                <p id="alt-form">No account? <a id="alt-form-link" href="/phpmotors/accounts/index.php?action=registration" title="Register for an account">Sign Up</a></p>
+                <p class="alt-form">No account? <a class="alt-form-link" href="/phpmotors/accounts/index.php?action=registration" title="Register for an account">Sign Up</a></p>
             </div>
         </div>
         <? require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/view/modules/footer.php"); ?>

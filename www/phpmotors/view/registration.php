@@ -37,7 +37,7 @@
                     </ul>
                     <input type="hidden" name="action" value="register">
                 </form>
-                <p id="alt-form">Already have an account? <a id="alt-form-link" href="/phpmotors/accounts/index.php?action=login" title="Return to login">Login</a></p>
+                <p class="alt-form">Already have an account? <a class="alt-form-link" href="/phpmotors/accounts/index.php?action=login" title="Return to login">Login</a></p>
             </div>
         </div>
         <? require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/view/modules/footer.php"); ?>
