@@ -132,11 +132,12 @@ body {
 }
 .errorMsg { color: red; }
 /* .successMsg {} */
+.alt-form { font-size: 20px; }
+.alt-form-link { color: var(--color-five); }
+.alt-form-link:hover { color: var(--color-three); }
 
 /******************** FORMS ********************/
-.form {
-    max-width: 400px;
-}
+.form { max-width: 400px; }
 .form ul {
     list-style: none;
     padding: 0;
@@ -174,6 +175,7 @@ label {
     font-size: 16px;
     padding: 0px;
 }
+.form select option[data-default] { color: var(--color-two); }
 .form textarea {
     box-sizing: border-box;
     width: 100%;
@@ -209,11 +211,6 @@ label {
     color: var(--color-six);
 }
 #submit:hover { color: var(--color-one); }
-.alt-form { font-size: 20px; }
-.alt-form-link {
-    color: var(--color-five);
-}
-.alt-form-link:hover { color: var(--color-three); }
 
 /******************** FOOTER ********************/
 footer {
@@ -266,8 +263,3 @@ footer hr {
     /* UPGRADES */
     .car__upgrades__container { grid-area: upgrade }
 }
-
-/*** TODO
-.errorMsg
-.successMsg
-***/

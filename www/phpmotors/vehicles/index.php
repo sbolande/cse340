@@ -19,6 +19,7 @@
     // Build a classification <select> dropdown using the $classifications array
     // <input type="text" name="classificationId" id="classificationId" required>
     $classificationDropdown = '<select name="classificationId" id="classificationId" required>';
+    $classificationDropdown .= '<option value="" selected data-default>-- Select classification --</option>';
     foreach ($classifications as $classification) {
         $classificationDropdown .= "<option value='$classification[classificationId]'>$classification[classificationName]</option>";
     }
