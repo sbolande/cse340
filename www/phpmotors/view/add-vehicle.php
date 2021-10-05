@@ -29,7 +29,7 @@
                             <? echo $classificationDropdown; ?>
                         </li>
                         <li>
-                            <label for="invDescription">Description</label><br>
+                            <label for="invDescription">Description</label>
                             <textarea rows="2" cols="48" name="invDescription" id="invDescription"></textarea>
                         </li>
                         <li>
@@ -44,7 +44,7 @@
                         </li>
                         <li>
                             <label for="invPrice">Price</label><br>
-                            $<input type="number" min="0.01" step="0.01" name="invPrice" id="invPrice" required value="0.01">
+                            $ <input type="number" min="0.01" step="0.01" name="invPrice" id="invPrice" class="dollar" required value="0.01">
                         </li>
                         <li>
                             <label for="invStock">Number in Stock</label>
@@ -52,7 +52,20 @@
                         </li>
                         <li>
                             <label for="invColor">Color</label>
-                            <input type="text" name="invColor" id="invColor" required>
+                            <input type="text" name="invColor" id="invColor" list="colorList" required>
+                            <datalist id="colorList">
+                                <option value="Black">
+                                <option value="White">
+                                <option value="Grey">
+                                <option value="Silver">
+                                <option value="Brown">
+                                <option value="Red">
+                                <option value="Orange">
+                                <option value="Yellow">
+                                <option value="Green">
+                                <option value="Blue">
+                                <option value="Purple">
+                            </datalist>
                         </li>
                         <li><input id="submit" type="submit" value="Submit"></li>
                     </ul>
