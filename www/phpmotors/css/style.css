@@ -212,7 +212,7 @@ label {
 }
 #submit:hover { color: var(--color-one); }
 .form li input:not(:placeholder-shown):not(:focus):invalid { border: 1px solid #C80000; }
-.form li input:valid { border: 1px solid #23B623; }
+.form li input:not([type="submit"]):valid { border: 1px solid #23B623; }
 
 /******************** FOOTER ********************/
 footer {

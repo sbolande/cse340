@@ -18,7 +18,8 @@
                     <ul>
                         <li>
                             <label for="clientEmail">Email</label>
-                            <input type="email" name="clientEmail" id="clientEmail" placeholder=" " required>
+                            <input type="email" name="clientEmail" id="clientEmail" placeholder=" "
+                            <?php if(isset($clientEmail)){echo "value='$clientEmail'";}  ?> required>
                         </li>
                         <li>
                             <label for="clientPassword">Password</label>
@@ -28,6 +29,7 @@
                         </li>
                         <li><input id="submit" type="submit" value="Login"></li>
                     </ul>
+                    <input type="hidden" name="action" value="login">
                 </form>
                 <p class="alt-form">No account? <a class="alt-form-link" href="/phpmotors/accounts/index.php?action=registration" title="Register for an account">Sign Up</a></p>
             </div>

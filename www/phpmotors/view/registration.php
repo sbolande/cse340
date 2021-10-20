@@ -18,15 +18,18 @@
                     <ul>
                         <li>
                             <label for="clientFirstname">First Name</label>
-                            <input type="text" name="clientFirstname" id="clientFirstname" placeholder=" " required>
+                            <input type="text" name="clientFirstname" id="clientFirstname" placeholder=" "
+                            <?php if(isset($clientFirstname)){echo "value='$clientFirstname'";}  ?> required>
                         </li>
                         <li>
                             <label for="clientLastname">Last Name</label>
-                            <input type="text" name="clientLastname" id="clientLastname" placeholder=" " required>
+                            <input type="text" name="clientLastname" id="clientLastname" placeholder=" "
+                            <?php if(isset($clientLastname)){echo "value='$clientLastname'";}  ?> required>
                         </li>
                         <li>
                             <label for="clientEmail">Email</label>
-                            <input type="email" name="clientEmail" id="clientEmail" placeholder=" " required>
+                            <input type="email" name="clientEmail" id="clientEmail" placeholder=" "
+                            <?php if(isset($clientEmail)){echo "value='$clientEmail'";}  ?> required>
                         </li>
                         <li>
                             <label for="clientPassword">Password</label>
@@ -40,7 +43,7 @@
                     </ul>
                     <input type="hidden" name="action" value="register">
                 </form>
-                <p class="alt-form">Already have an account? <a class="alt-form-link" href="/phpmotors/accounts/index.php?action=login" title="Return to login">Login</a></p>
+                <p class="alt-form">Already have an account? <a class="alt-form-link" href="/phpmotors/accounts/index.php" title="Return to login">Login</a></p>
             </div>
         </div>
         <? require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/view/modules/footer.php"); ?>
