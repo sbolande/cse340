@@ -19,17 +19,17 @@
                         <li>
                             <label for="clientFirstname">First Name</label>
                             <input type="text" name="clientFirstname" id="clientFirstname" placeholder=" "
-                            <?php if(isset($clientFirstname)){echo "value='$clientFirstname'";}  ?> required>
+                            <? if(isset($clientFirstname)){echo "value='$clientFirstname'";}  ?> required>
                         </li>
                         <li>
                             <label for="clientLastname">Last Name</label>
                             <input type="text" name="clientLastname" id="clientLastname" placeholder=" "
-                            <?php if(isset($clientLastname)){echo "value='$clientLastname'";}  ?> required>
+                            <? if(isset($clientLastname)){echo "value='$clientLastname'";}  ?> required>
                         </li>
                         <li>
                             <label for="clientEmail">Email</label>
                             <input type="email" name="clientEmail" id="clientEmail" placeholder=" "
-                            <?php if(isset($clientEmail)){echo "value='$clientEmail'";}  ?> required>
+                            <? if(isset($clientEmail)){echo "value='$clientEmail'";}  ?> required>
                         </li>
                         <li>
                             <label for="clientPassword">Password</label>

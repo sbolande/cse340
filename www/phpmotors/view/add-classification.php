@@ -18,8 +18,8 @@
                     <ul>
                         <li>
                             <label for="classificationName">Classification Name</label>
-                            <input type="text" name="classificationName" id="classificationName"
-                            maxlength="30" placeholder=" " required>
+                            <input type="text" name="classificationName" id="classificationName" maxlength="30"
+                            placeholder=" " <? if(isset($classificationName)){echo "value='$classificationName'";} ?> required>
                         </li>
                         <li><input id="submit" type="submit" value="Submit"></li>
                     </ul>

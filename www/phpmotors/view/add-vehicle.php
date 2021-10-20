@@ -1,4 +1,21 @@
-<!DOCTYPE html>
+<?
+    // Build a classification <select> dropdown using the $classifications array
+    // <input type="text" name="classificationId" id="classificationId" required>
+    $classificationDropdown = "<select name='classificationId' id='classificationId' required>";
+    foreach ($classifications as $classification) {
+        $classificationDropdown .= "<option value='$classification[classificationId]'";
+        if (isset($classificationId)) {
+            if ($classification['classificationId'] === $classificationId) {
+                $classificationDropdown .= " selected";
+            }
+        }
+        $classificationDropdown .= ">$classification[classificationName]</option>";
+    }
+    if (!isset($classificationId)) {
+        $classificationDropdown .= '<option value="" selected data-default>-- Select classification --</option>';
+    }
+    $classificationDropdown .= '</select>';
+?><!DOCTYPE html>
 <html lang="en">
     <head>
         <title>PHP Motors - Add Vehicle</title>
@@ -18,11 +35,13 @@
                     <ul>
                         <li>
                             <label for="invMake">Make</label>
-                            <input type="text" name="invMake" id="invMake" placeholder=" " required>
+                            <input type="text" name="invMake" id="invMake" placeholder=" "
+                            <? if(isset($invMake)){echo "value='$invMake'";} ?> required>
                         </li>
                         <li>
                             <label for="invModel">Model</label>
-                            <input type="text" name="invModel" id="invModel" placeholder=" " required>
+                            <input type="text" name="invModel" id="invModel" placeholder=" "
+                            <? if(isset($invModel)){echo "value='$invModel'";} ?> required>
                         </li>
                         <li>
                             <label for="classificationId">Classification</label><br>
@@ -30,30 +49,38 @@
                         </li>
                         <li>
                             <label for="invDescription">Description</label>
-                            <textarea rows="2" cols="48" name="invDescription" id="invDescription" placeholder=" "></textarea>
+                            <textarea rows="2" cols="48" name="invDescription" id="invDescription" placeholder=" ">
+                                <? if(isset($invDescription)){echo $invDescription;} ?>
+                            </textarea>
                         </li>
                         <li>
                             <label for="invImage">Image Path</label>
-                            <input type="text" name="invImage" id="invImage" placeholder=" " required value="/images/no-image.png">
+                            <input type="text" name="invImage" id="invImage" placeholder=" "
+                            <? if(isset($invImage)){echo "value='$invImage'";}else{echo 'value="/images/no-image.png"';} ?>
+                            pattern="^(.+)(\/|\\)([^\/]+).(png|jpg|jpeg|svg)$" required>
                             <span class="hint">Must be a valid filepath.</span>
                         </li>
                         <li>
                             <label for="invThumbnail">Thumbnail Path</label>
-                            <input type="text" name="invThumbnail" id="invThumbnail" placeholder=" " required value="/images/no-image.png">
+                            <input type="text" name="invThumbnail" id="invThumbnail" placeholder=" "
+                            <? if(isset($invThumbnail)){echo "value='$invThumbnail'";}else{echo 'value="/images/no-image.png"';} ?>
+                            pattern="^(.+)(\/|\\)([^\/]+).(png|jpg|jpeg|svg)$" required>
                             <span class="hint">Must be a valid filepath.</span>
                         </li>
                         <li>
                             <label for="invPrice">Price</label><br>
-                            $ <input type="number" min="0.01" step="0.01" name="invPrice"
-                            id="invPrice" class="dollar" placeholder=" " required value="0.01">
+                            $ <input type="number" min="0.01" step="0.01" name="invPrice" id="invPrice" class="dollar" placeholder="0.00"
+                            <? if(isset($invPrice)){echo "value='$invPrice'";} ?> required>
                         </li>
                         <li>
                             <label for="invStock">Number in Stock</label>
-                            <input type="number" min="1" max="50" name="invStock" id="invStock" placeholder=" " required value="1">
+                            <input type="number" min="1" max="50" name="invStock" id="invStock" placeholder=" "
+                            <? if(isset($invStock)){echo "value='$invStock'";}else{echo 'value="1"';} ?> required>
                         </li>
                         <li>
                             <label for="invColor">Color</label>
-                            <input type="text" name="invColor" id="invColor" list="colorList" placeholder=" " required>
+                            <input type="text" name="invColor" id="invColor" list="colorList" placeholder=" "
+                            <? if(isset($invColor)){echo "value='$invColor'";} ?> required>
                             <datalist id="colorList">
                                 <option value="Black">
                                 <option value="White">

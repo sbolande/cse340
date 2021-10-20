@@ -1,6 +1,8 @@
 <? // VEHICLES CONTROLLER
     // get the phpmotorsConnect() function
     require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/library/connections.php");
+    // get the functions library
+    require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/library/functions.php");
     // get the main model
     require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/model/main-model.php");
     // get the vehicles model
@@ -9,21 +11,7 @@
     // get classifications array
     $classifications = getClassifications();
     // Build a navigation bar using the $classifications array
-    $navList = '<ul id="navbar">';
-    $navList .= "<li><a class='navbar-item' href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
-    foreach ($classifications as $classification) {
-        $navList .= "<li><a class='navbar-item' href='/phpmotors/index.php?action=".urlencode($classification['classificationName'])."' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
-    }
-    $navList .= '</ul>';
-    
-    // Build a classification <select> dropdown using the $classifications array
-    // <input type="text" name="classificationId" id="classificationId" required>
-    $classificationDropdown = '<select name="classificationId" id="classificationId" required>';
-    $classificationDropdown .= '<option value="" selected data-default>-- Select classification --</option>';
-    foreach ($classifications as $classification) {
-        $classificationDropdown .= "<option value='$classification[classificationId]'>$classification[classificationName]</option>";
-    }
-    $classificationDropdown .= '</select>';
+    $navList = buildNavList($classifications);
     
     $action = filter_input(INPUT_POST, 'action');
     if ($action == NULL) {
@@ -37,10 +25,10 @@
             include '../view/add-vehicle.php';
             break;
         case 'addClassification':
-            $classificationName = filter_input(INPUT_POST, 'classificationName');
+            $classificationName = trim(filter_input(INPUT_POST, 'classificationName', FILTER_SANITIZE_STRING));
 
             // check for missing input
-            if(empty($classificationName)) {
+            if (empty($classificationName)) {
                 $message = '<p class="errorMsg">Please provide information for all empty form fields.</p>';
                 include '../view/add-classification.php';
                 exit;
@@ -53,11 +41,17 @@
                     exit;
                 }
             }
+            // check input length
+            if (mb_strlen($classificationName) > 30) {
+                $message = '<p class="errorMsg">Classification name must not exceed 30 characters.</p>';
+                include '../view/add-classification.php';
+                exit;
+            }
 
             $addClassOutcome = addClassification($classificationName);
 
             // Check and report the result
-            if($addClassOutcome === 1) {
+            if ($addClassOutcome === 1) {
                 header('Location: /phpmotors/vehicles/index.php');
                 exit;
             } else {
@@ -68,33 +62,40 @@
             
             break;
         case 'addVehicle':
-            $invMake = filter_input(INPUT_POST, 'invMake');
-            $invModel = filter_input(INPUT_POST, 'invModel');
-            $invDescription = filter_input(INPUT_POST, 'invDescription');
-            $invImage = filter_input(INPUT_POST, 'invImage');
-            $invThumbnail = filter_input(INPUT_POST, 'invThumbnail');
-            $invPrice = filter_input(INPUT_POST, 'invPrice');
-            $invStock = filter_input(INPUT_POST, 'invStock');
-            $invColor = filter_input(INPUT_POST, 'invColor');
-            $classificationId = filter_input(INPUT_POST, 'classificationId');
+            $invMake = trim(filter_input(INPUT_POST, 'invMake', FILTER_SANITIZE_STRING));
+            $invModel = trim(filter_input(INPUT_POST, 'invModel', FILTER_SANITIZE_STRING));
+            $invDescription = trim(filter_input(INPUT_POST, 'invDescription', FILTER_SANITIZE_STRING));
+            $invImage = trim(filter_input(INPUT_POST, 'invImage', FILTER_FLAG_PATH_REQUIRED));
+            $invThumbnail = trim(filter_input(INPUT_POST, 'invThumbnail', FILTER_FLAG_PATH_REQUIRED));
+            $invPrice = trim(filter_input(INPUT_POST, 'invPrice', FILTER_FLAG_ALLOW_FRACTION));
+            $invStock = trim(filter_input(INPUT_POST, 'invStock', FILTER_SANITIZE_NUMBER_INT));
+            $invColor = trim(filter_input(INPUT_POST, 'invColor', FILTER_SANITIZE_STRING));
+            $classificationId = trim(filter_input(INPUT_POST, 'classificationId', FILTER_SANITIZE_NUMBER_INT));
 
             // check for missing input
-            if(empty($invMake) || empty($invModel) || empty($invDescription) ||
-               empty($invImage) || empty($invThumbnail) || empty($invPrice) ||
-               empty($invStock) || empty($invColor) || empty($classificationId)
-            ) {
+            if (empty($invMake) || empty($invModel) || empty($invDescription) ||
+                empty($invImage) || empty($invThumbnail) || empty($invPrice) ||
+                empty($invStock) || empty($invColor) || empty($classificationId)) {
                 $message = '<p class="errorMsg">Please provide information for all empty form fields.</p>';
                 include '../view/add-vehicle.php';
                 exit;
             }
 
+            // check other input formalities
+            if (empty(checkFilepath($invImage)) || empty(checkFilepath($invThumbnail))) {
+                $message = '<p class="errorMsg">Please check that image & thumbnail file/URL paths are correct.</p>';
+                include '../view/add-vehicle.php';
+                exit;
+            }
+
+            // Send the data to the model
             $addVehicleOutcome = addVehicle($invMake, $invModel, $invDescription,
                 $invImage, $invThumbnail, $invPrice,
                 $invStock, $invColor, $classificationId);
 
             // Check and report the result
-            if($addVehicleOutcome === 1) {
-                $message = "<p class='successMsg'>$invMake successfully added!</p>";
+            if ($addVehicleOutcome === 1) {
+                $message = "<p class='successMsg'>" . $invMake . " successfully added!</p>";
                 include '../view/add-vehicle.php';
                 exit;
             } else {

@@ -19,7 +19,7 @@
                         <li>
                             <label for="clientEmail">Email</label>
                             <input type="email" name="clientEmail" id="clientEmail" placeholder=" "
-                            <?php if(isset($clientEmail)){echo "value='$clientEmail'";}  ?> required>
+                            <? if(isset($clientEmail)){echo "value='$clientEmail'";}  ?> required>
                         </li>
                         <li>
                             <label for="clientPassword">Password</label>
