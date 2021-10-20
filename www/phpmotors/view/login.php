@@ -18,11 +18,12 @@
                     <ul>
                         <li>
                             <label for="clientEmail">Email</label>
-                            <input type="email" name="clientEmail" id="clientEmail" required>
+                            <input type="email" name="clientEmail" id="clientEmail" placeholder=" " required>
                         </li>
                         <li>
                             <label for="clientPassword">Password</label>
-                            <input type="password" name="clientPassword" id="clientPassword" required>
+                            <input type="password" name="clientPassword" id="clientPassword" placeholder=" " required>
+                            <span class="hint">At least 8 characters, 1 uppercase, 1 number, and 1 special character<br><br></span>
                             <span id="showPass" class="hint" onclick="togglePassword()">Show Password</span>
                         </li>
                         <li><input id="submit" type="submit" value="Login"></li>

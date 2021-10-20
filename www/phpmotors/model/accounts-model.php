@@ -5,7 +5,7 @@
         // Create a connection object using the phpmotors connection function
         $db = phpmotorsConnect();
         // The SQL statement
-        $sql = 'INSERT INTO clients (clientFirstname, clientLastname,clientEmail, clientPassword) VALUES (:clientFirstname, :clientLastname, :clientEmail, :clientPassword)';
+        $sql = 'INSERT INTO clients (clientFirstname, clientLastname, clientEmail, clientPassword) VALUES (:clientFirstname, :clientLastname, :clientEmail, :clientPassword)';
         // Create the prepared statement using the phpmotors connection
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':clientFirstname', $clientFirstname, PDO::PARAM_STR);

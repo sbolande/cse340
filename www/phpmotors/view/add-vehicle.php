@@ -18,11 +18,11 @@
                     <ul>
                         <li>
                             <label for="invMake">Make</label>
-                            <input type="text" name="invMake" id="invMake" required>
+                            <input type="text" name="invMake" id="invMake" placeholder=" " required>
                         </li>
                         <li>
                             <label for="invModel">Model</label>
-                            <input type="text" name="invModel" id="invModel" required>
+                            <input type="text" name="invModel" id="invModel" placeholder=" " required>
                         </li>
                         <li>
                             <label for="classificationId">Classification</label><br>
@@ -30,29 +30,30 @@
                         </li>
                         <li>
                             <label for="invDescription">Description</label>
-                            <textarea rows="2" cols="48" name="invDescription" id="invDescription"></textarea>
+                            <textarea rows="2" cols="48" name="invDescription" id="invDescription" placeholder=" "></textarea>
                         </li>
                         <li>
                             <label for="invImage">Image Path</label>
-                            <input type="text" name="invImage" id="invImage" required value="/images/no-image.png">
+                            <input type="text" name="invImage" id="invImage" placeholder=" " required value="/images/no-image.png">
                             <span class="hint">Must be a valid filepath.</span>
                         </li>
                         <li>
                             <label for="invThumbnail">Thumbnail Path</label>
-                            <input type="text" name="invThumbnail" id="invThumbnail" required value="/images/no-image.png">
+                            <input type="text" name="invThumbnail" id="invThumbnail" placeholder=" " required value="/images/no-image.png">
                             <span class="hint">Must be a valid filepath.</span>
                         </li>
                         <li>
                             <label for="invPrice">Price</label><br>
-                            $ <input type="number" min="0.01" step="0.01" name="invPrice" id="invPrice" class="dollar" required value="0.01">
+                            $ <input type="number" min="0.01" step="0.01" name="invPrice"
+                            id="invPrice" class="dollar" placeholder=" " required value="0.01">
                         </li>
                         <li>
                             <label for="invStock">Number in Stock</label>
-                            <input type="number" min="1" max="50" name="invStock" id="invStock" required value="1">
+                            <input type="number" min="1" max="50" name="invStock" id="invStock" placeholder=" " required value="1">
                         </li>
                         <li>
                             <label for="invColor">Color</label>
-                            <input type="text" name="invColor" id="invColor" list="colorList" required>
+                            <input type="text" name="invColor" id="invColor" list="colorList" placeholder=" " required>
                             <datalist id="colorList">
                                 <option value="Black">
                                 <option value="White">

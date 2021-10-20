@@ -18,19 +18,22 @@
                     <ul>
                         <li>
                             <label for="clientFirstname">First Name</label>
-                            <input type="text" name="clientFirstname" id="clientFirstname" required>
+                            <input type="text" name="clientFirstname" id="clientFirstname" placeholder=" " required>
                         </li>
                         <li>
                             <label for="clientLastname">Last Name</label>
-                            <input type="text" name="clientLastname" id="clientLastname" required>
+                            <input type="text" name="clientLastname" id="clientLastname" placeholder=" " required>
                         </li>
                         <li>
                             <label for="clientEmail">Email</label>
-                            <input type="email" name="clientEmail" id="clientEmail" required>
+                            <input type="email" name="clientEmail" id="clientEmail" placeholder=" " required>
                         </li>
                         <li>
                             <label for="clientPassword">Password</label>
-                            <input type="password" name="clientPassword" id="clientPassword" required>
+                            <input type="password" name="clientPassword" id="clientPassword" 
+                            pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                            placeholder=" " required>
+                            <span class="hint">At least 8 characters, 1 uppercase, 1 number, and 1 special character<br><br></span>
                             <span id="showPass" class="hint" onclick="togglePassword()">Show Password</span>
                         </li>
                         <li><input id="submit" type="submit" value="Create Account"></li>
