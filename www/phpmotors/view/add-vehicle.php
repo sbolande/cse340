@@ -48,9 +48,9 @@
                         </li>
                         <li>
                             <label for="invDescription">Description</label>
-                            <textarea rows="2" cols="48" name="invDescription" id="invDescription" placeholder=" ">
-                                <? if(isset($invDescription)){echo $invDescription;} ?>
-                            </textarea>
+                            <textarea rows="2" cols="48" name="invDescription" id="invDescription" placeholder=" "><?
+                                if(isset($invDescription)){echo $invDescription;}
+                            ?></textarea>
                         </li>
                         <li>
                             <label for="invImage">Image Path</label>
