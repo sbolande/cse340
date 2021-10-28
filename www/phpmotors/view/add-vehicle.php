@@ -1,6 +1,11 @@
 <?
     // Build a classification <select> dropdown using the $classifications array
     $classificationDropdown = "<select name='classificationId' id='classificationId' required>";
+    $classificationDropdown .= '<option value="" ';
+    if (!isset($classificationId)) {
+        $classificationDropdown .= 'selected ';
+    }
+    $classificationDropdown .= 'data-default>-- Select classification --</option>';
     foreach ($classifications as $classification) {
         $classificationDropdown .= "<option value='$classification[classificationId]'";
         if (isset($classificationId)) {
@@ -9,9 +14,6 @@
             }
         }
         $classificationDropdown .= ">$classification[classificationName]</option>";
-    }
-    if (!isset($classificationId)) {
-        $classificationDropdown .= '<option value="" selected data-default>-- Select classification --</option>';
     }
     $classificationDropdown .= '</select>';
 ?><!DOCTYPE html>
