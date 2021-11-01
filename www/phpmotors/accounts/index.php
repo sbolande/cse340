@@ -45,8 +45,12 @@
                 include '../view/registration.php';
                 exit; 
             }
-            // check for already existing email
-            // foreach ($emails as $email) {}
+            // check for existing email
+            if (checkExistingEmail($clientEmail)) {
+                $message = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
+                include '../view/login.php';
+                exit;
+            }
 
             // Hash the checked password
             $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
