@@ -29,6 +29,8 @@ body {
     color: var(--color-five);
 }
 #header-top #account:hover { color: var(--color-three); }
+#header-top #account span { padding-left: 3px; }
+#header-top #account:hover span { color: var(--color-five); }
 /* NAVBAR */
 #navbar {
     background-color: var(--color-five);
