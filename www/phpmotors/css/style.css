@@ -243,9 +243,8 @@ footer hr {
 /******************** BIG SCREEN ********************/
 @media (min-width: 620px) {
     html {
-        background-image: url("../images/site/checkerboard.jpg");
+        background-image: url("../images/site/small_check.jpg");
         background-attachment: fixed;
-        background-size: 350px;
         display: flex;
         justify-content: center;
     }
