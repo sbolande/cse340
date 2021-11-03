@@ -1,4 +1,6 @@
 <? // MAIN CONTROLLER
+    session_start();
+
     // get the phpmotorsConnect() function
     require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/library/connections.php");
     // get the functions library
