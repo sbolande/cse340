@@ -9,17 +9,14 @@
         <div id="content">
             <h1>Login</h1>
             <div class="content__data">
-                <?
-                    if (isset($_SESSION['message'])) {
-                        echo $_SESSION['message'];
-                    }
-                ?>
+                <? if (isset($_SESSION['message'])){ echo $_SESSION['message']; }
+                if (isset($message)){ echo $message; } ?>
                 <form class="form" method="post" action="/phpmotors/accounts/" name="login">
                     <ul>
                         <li>
                             <label for="clientEmail">Email</label>
                             <input type="email" name="clientEmail" id="clientEmail" placeholder=" "
-                            <? if(isset($clientEmail)){echo "value='$clientEmail'";}  ?> required>
+                            <? if(isset($clientEmail)){ echo "value='$clientEmail'"; } ?> required>
                         </li>
                         <li>
                             <label for="clientPassword">Password</label>

@@ -12,11 +12,6 @@
     $classifications = getClassifications();
     // Build a navigation bar using the $classifications array
     $navList = buildNavList($classifications);
-
-    // check if firstname cookie exists, get value
-    if (isset($_COOKIE['firstname'])) {
-        $cookieFirstname = filter_input(INPUT_COOKIE, 'firstname', FILTER_SANITIZE_STRING);
-    }
     
     $action = filter_input(INPUT_POST, 'action');
     if ($action == NULL) {

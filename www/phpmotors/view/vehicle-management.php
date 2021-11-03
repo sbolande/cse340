@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?
+    // check if logged in and user level before preceding
+    if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
+        header('Location: /phpmotors/');
+        exit;
+    }
+?><!DOCTYPE html>
 <html lang="en">
     <head>
         <title>PHP Motors - Vehicle Management</title>

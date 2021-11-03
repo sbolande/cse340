@@ -25,12 +25,12 @@ body {
 #header-top #account {
     padding-top: 15px;
     padding-right: 35px;
+}
+#header-top #account a {
     text-decoration: none;
     color: var(--color-five);
 }
-#header-top #account:hover { color: var(--color-three); }
-#header-top #account span { padding-left: 3px; }
-#header-top #account:hover span { color: var(--color-five); }
+#header-top #account a:hover { color: var(--color-three); }
 /* NAVBAR */
 #navbar {
     background-color: var(--color-five);
@@ -54,7 +54,7 @@ body {
 }
 .navbar-item:active { color: var(--color-one); }
 
-/******************** CONTENT ********************/
+/******************** BASIC CONTENT ********************/
 .car {
     display: flex;
     flex-direction: column;
@@ -139,6 +139,17 @@ body {
 .alt-form { font-size: 20px; }
 .alt-form-link { color: var(--color-five); }
 .alt-form-link:hover { color: var(--color-three); }
+
+/******************** ADMIN ********************/
+#userDataTable { border-collapse: collapse; }
+#userDataTable th, td {
+    min-width: 100px;
+    text-align: left;
+    padding: 4px;
+    border: 1px solid var(--color-five);
+}
+#userDataTable td { min-width: 250px; }
+#userDataTable tr:hover { background-color: var(--color-one); }
 
 /******************** FORMS ********************/
 .form { max-width: 400px; }

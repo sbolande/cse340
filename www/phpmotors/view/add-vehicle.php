@@ -1,4 +1,9 @@
 <?
+    // check if logged in and user level before preceding
+    if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
+        header('Location: /phpmotors/');
+        exit;
+    }
     // Build a classification <select> dropdown using the $classifications array
     $classificationDropdown = "<select name='classificationId' id='classificationId' required>";
     $classificationDropdown .= '<option value="" ';

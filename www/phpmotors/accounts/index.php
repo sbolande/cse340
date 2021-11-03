@@ -20,6 +20,9 @@
         $action = filter_input(INPUT_GET, 'action');
     }
     switch ($action) {
+        case 'signin':
+            include '../view/login.php';
+            break;
         case 'login':
             $clientEmail = checkEmail(trim(filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL)));
             $clientPassword = trim(filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING));
@@ -47,8 +50,10 @@
             $_SESSION['clientData'] = $clientData;
             // send them to the admin view
             include '../view/admin.php';
-            exit;
 
+            // remove the message session var in case a new user has successfully logged in
+            unset($_SESSION['message']);
+            exit;
             break;
         case 'registration':
             include '../view/registration.php';
@@ -79,7 +84,6 @@
 
             // Check and report the result
             if($regOutcome === 1) {
-                setcookie("firstname", $clientFirstname, strtotime("+1 year"), '/');
                 $_SESSION['message'] = "<p class='successMsg'>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
                 header('Location: /phpmotors/accounts/?action=login');
                 exit;
@@ -89,7 +93,15 @@
                 exit;
             }
             break;
+        case 'logout':
+            unset($_SESSION['clientData']);
+            unset($_SESSION['loggedin']);
+            unset($_SESSION['message']);
+            session_destroy();
+            header('Location: /phpmotors/');
+            exit;
+            break;
         default:
-            include '../view/login.php';
+            include '../view/admin.php';
     }
 ?>
