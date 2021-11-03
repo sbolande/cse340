@@ -32,9 +32,9 @@
                         <td><? echo $_SESSION['clientData']['clientLevel']; ?></td>
                     </tr> -->
                 </table>
-                <? if ($_SESSION['clientData']['clientLevel'] > 1){
-                    echo '<p class="alt-form"><a class="alt-form-link" href="/phpmotors/vehicles/" title="Vehicle and car classification management">Manage Vehicles</a></p>';
-                } ?>
+                <? if ($_SESSION['clientData']['clientLevel'] > 1){ ?>
+                    <p class="alt-form"><a class="alt-form-link" href="/phpmotors/vehicles/" title="Vehicle and car classification management">Manage Vehicles</a></p>
+                <? } ?>
             </div>
         </div>
         <? require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/view/modules/footer.php"); ?>
