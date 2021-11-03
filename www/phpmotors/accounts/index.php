@@ -30,6 +30,24 @@
                 include '../view/login.php';
                 exit;
             }
+            // query client data
+            $clientData = getClient($clientEmail);
+            // verify password
+            if(!password_verify($clientPassword, $clientData['clientPassword'])) {
+                $message = '<p class="errorMsg">Please check your password and try again.</p>';
+                include '../view/login.php';
+                exit;
+            }
+
+            // validation complete, log in user
+            $_SESSION['loggedin'] = TRUE;
+            // remove password
+            array_pop($clientData);
+            // store session vars
+            $_SESSION['clientData'] = $clientData;
+            // send them to the admin view
+            include '../view/admin.php';
+            exit;
 
             break;
         case 'registration':
@@ -62,8 +80,8 @@
             // Check and report the result
             if($regOutcome === 1) {
                 setcookie("firstname", $clientFirstname, strtotime("+1 year"), '/');
-                $message = "<p class='successMsg'>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
-                include '../view/login.php';
+                $_SESSION['message'] = "<p class='successMsg'>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
+                header('Location: /phpmotors/accounts/?action=login');
                 exit;
             } else {
                 $message = "<p class='errorMsg'>Sorry $clientFirstname, but the registration failed. Please try again.</p>";

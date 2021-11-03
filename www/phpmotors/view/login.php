@@ -10,11 +10,11 @@
             <h1>Login</h1>
             <div class="content__data">
                 <?
-                    if (isset($message)) {
-                        echo $message;
+                    if (isset($_SESSION['message'])) {
+                        echo $_SESSION['message'];
                     }
                 ?>
-                <form class="form" method="post" action="javascript:void(0);" name="login">
+                <form class="form" method="post" action="/phpmotors/accounts/" name="login">
                     <ul>
                         <li>
                             <label for="clientEmail">Email</label>
