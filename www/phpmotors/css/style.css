@@ -140,16 +140,43 @@ body {
 .alt-form-link { color: var(--color-five); }
 .alt-form-link:hover { color: var(--color-three); }
 
-/******************** ADMIN ********************/
-#userDataTable { border-collapse: collapse; }
-#userDataTable th, td {
-    min-width: 100px;
+/******************** TABLES ********************/
+table { border-collapse: collapse; }
+table th, td {
     text-align: left;
     padding: 4px;
     border: 1px solid var(--color-five);
 }
+tbody tr:hover { background-color: var(--color-one); }
+
+/* USER TABLE */
+#userDataTable th { min-width: 100px; }
 #userDataTable td { min-width: 250px; }
-#userDataTable tr:hover { background-color: var(--color-one); }
+
+/* VEHICLE MGMT TABLE */
+#inventoryDisplay { margin: 12px; }
+
+#inventoryDisplay thead tr { border: 1px solid var(--color-five); }
+#inventoryDisplay thead th { border: none; }
+.noshow { display: none; }
+
+.invDisplayName { min-width: 250px; }
+.invDisplayLink {
+    min-width: 60px;
+    text-align: center;
+}
+.invDisplayLink a {
+    background-color: var(--color-three);
+    border: 1px solid var(--color-four);
+    border-radius: 5px;
+    padding: 1px 4px;
+    color: black;
+    text-decoration: none;
+}
+.invDisplayLink a:hover {
+    background-color: var(--color-four);
+    color: var(--color-six);
+}
 
 /******************** FORMS ********************/
 .form { max-width: 400px; }
@@ -228,6 +255,14 @@ label {
 #submit:hover { color: var(--color-one); }
 .form li input:not(:placeholder-shown):not(:focus):invalid { border: 1px solid var(--error-color); }
 .form li input:not([type="submit"]):valid { border: 1px solid var(--success-color); }
+
+/* ADDITIONAL FORM CONTENT */
+#classificationList {
+    margin-left: 15%;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+}
 
 /******************** FOOTER ********************/
 footer {

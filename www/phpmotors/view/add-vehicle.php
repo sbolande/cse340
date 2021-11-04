@@ -1,6 +1,6 @@
 <?
     // check if logged in and user level before preceding
-    if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
+    if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] < 2) {
         header('Location: /phpmotors/');
         exit;
     }

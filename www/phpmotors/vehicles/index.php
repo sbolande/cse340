@@ -106,7 +106,16 @@
                 exit;
             }
             break;
+        case 'getInventoryItems':
+            $classificationId = filter_input(INPUT_GET, 'classificationId', FILTER_SANITIZE_NUMBER_INT);
+            $inventoryArray = getInventoryByClassification($classificationId);
+            echo json_encode($inventoryArray);
+            break;
         default:
+            $classificationList = buildClassificationList($classifications);
+
+
             include '../view/vehicle-management.php';
+            break;
     }
 ?>

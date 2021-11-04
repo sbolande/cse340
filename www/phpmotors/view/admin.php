@@ -15,22 +15,24 @@
             <h1><? echo $_SESSION['clientData']['clientFirstname'] . ' ' . $_SESSION['clientData']['clientLastname']; ?></h1>
             <div class="content__data">
                 <table id="userDataTable">
-                    <tr>
-                        <th>First Name</th>
-                        <td><? echo $_SESSION['clientData']['clientFirstname']; ?></td>
-                    </tr>
-                    <tr>
-                        <th>Last Name</th>
-                        <td><? echo $_SESSION['clientData']['clientLastname']; ?></td>
-                    </tr>
-                    <tr>
-                        <th>Email</th>
-                        <td><? echo $_SESSION['clientData']['clientEmail']; ?></td>
-                    </tr>
-                    <!-- <tr>
-                        <th>User Level</th>
-                        <td><? echo $_SESSION['clientData']['clientLevel']; ?></td>
-                    </tr> -->
+                    <tbody>
+                        <tr>
+                            <th>First Name</th>
+                            <td><? echo $_SESSION['clientData']['clientFirstname']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Last Name</th>
+                            <td><? echo $_SESSION['clientData']['clientLastname']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td><? echo $_SESSION['clientData']['clientEmail']; ?></td>
+                        </tr>
+                        <!-- <tr>
+                            <th>User Level</th>
+                            <td><? echo $_SESSION['clientData']['clientLevel']; ?></td>
+                        </tr> -->
+                    </tbody>
                 </table>
                 <? if ($_SESSION['clientData']['clientLevel'] > 1){ ?>
                     <p class="alt-form"><a class="alt-form-link" href="/phpmotors/vehicles/" title="Vehicle and car classification management">Manage Vehicles</a></p>
