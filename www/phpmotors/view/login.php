@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>PHP Motors - Login</title>
+        <title>Login | PHP Motors</title>
         <link rel="stylesheet" type="text/css" href="/phpmotors/css/style.css" media="screen">
     </head>
     <body>

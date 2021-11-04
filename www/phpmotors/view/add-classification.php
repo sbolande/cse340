@@ -7,7 +7,7 @@
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>PHP Motors - Add Classification</title>
+        <title>Add Classification | PHP Motors</title>
         <link rel="stylesheet" type="text/css" href="/phpmotors/css/style.css" media="screen">
     </head>
     <body>

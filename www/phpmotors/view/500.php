@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>PHP Motors - 500</title>
+    <title>500 | PHP Motors</title>
     <link rel="stylesheet" type="text/css" href="/phpmotors/css/style.css" media="screen">
 </head>
 

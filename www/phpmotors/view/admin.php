@@ -6,7 +6,7 @@
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>PHP Motors - My Account</title>
+        <title>My Account | PHP Motors</title>
         <link rel="stylesheet" type="text/css" href="/phpmotors/css/style.css" media="screen">
     </head>
     <body>
