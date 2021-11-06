@@ -12,7 +12,7 @@
                 <? if (isset($message)){
                     echo $message;
                 } ?>
-                <form class="form" method="post" action="/phpmotors/accounts/index.php" name="registration">
+                <form class="form" method="post" action="/phpmotors/accounts/" name="registration">
                     <ul>
                         <li>
                             <label for="clientFirstname">First Name</label>

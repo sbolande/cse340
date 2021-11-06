@@ -20,7 +20,7 @@
                 <? if (isset($message)){
                     echo $message;
                 } ?>
-                <form class="form" method="post" action="/phpmotors/vehicles/index.php" name="deleteVehicle">
+                <form class="form" method="post" action="/phpmotors/vehicles/" name="deleteVehicle">
                     <ul>
                         <li>
                             <label for="invMake">Make</label>

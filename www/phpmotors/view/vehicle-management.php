@@ -19,8 +19,8 @@
         <div id="content">
             <h1>Manage Vehicles</h1>
             <div class="content__data">
-                <p class="alt-form">Want to add a new car style? <a class="alt-form-link" href="/phpmotors/vehicles/index.php?action=manageClassification" title="Create a new car classification">Add a Classification</a></p>
-                <p class="alt-form">Want to add a new model of car? <a class="alt-form-link" href="/phpmotors/vehicles/index.php?action=manageVehicle" title="Create a new model">Add a Vehicle</a></p>
+                <p class="alt-form">Want to add a new car style? <a class="alt-form-link" href="/phpmotors/vehicles/?action=manageClassification" title="Create a new car classification">Add a Classification</a></p>
+                <p class="alt-form">Want to add a new model of car? <a class="alt-form-link" href="/phpmotors/vehicles/?action=manageVehicle" title="Create a new model">Add a Vehicle</a></p>
                 <? if(isset($message)){
                     echo $message;
                 }

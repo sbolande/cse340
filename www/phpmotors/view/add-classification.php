@@ -18,7 +18,7 @@
                 <? if (isset($message)){
                     echo $message;
                 } ?>
-                <form class="form" method="post" action="/phpmotors/vehicles/index.php" name="addClassification">
+                <form class="form" method="post" action="/phpmotors/vehicles/" name="addClassification">
                     <ul>
                         <li>
                             <label for="classificationName">Classification Name</label>

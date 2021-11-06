@@ -45,7 +45,7 @@
                 <? if (isset($message)){
                     echo $message;
                 } ?>
-                <form class="form" method="post" action="/phpmotors/vehicles/index.php" name="addVehicle">
+                <form class="form" method="post" action="/phpmotors/vehicles/" name="addVehicle">
                     <ul>
                         <li>
                             <label for="invMake">Make</label>

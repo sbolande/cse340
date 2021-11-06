@@ -5,7 +5,7 @@ let classificationList = document.querySelector("#classificationList");
 classificationList.addEventListener("change", () => {
     let classificationId = classificationList.value;
     console.log(`classificationId is: ${classificationId}`);
-    let classIdURL = "/phpmotors/vehicles/index.php?action=getInventoryItems&classificationId=" + classificationId;
+    let classIdURL = "/phpmotors/vehicles/?action=getInventoryItems&classificationId=" + classificationId;
     fetch(classIdURL)
         .then((response) => {
             if (response.ok) {
