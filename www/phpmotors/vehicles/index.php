@@ -54,7 +54,7 @@
 
             // Check and report the result
             if ($addClassOutcome === 1) {
-                header('Location: /phpmotors/vehicles/index.php');
+                header('Location: /phpmotors/vehicles/');
                 exit;
             } else {
                 $message = "<p class='errorMsg'>Sorry, but adding the classification failed. Please try again.</p>";
@@ -98,7 +98,7 @@
 
             // Check and report the result
             if ($addVehicleOutcome === 1) {
-                $message = "<p class='successMsg'>" . $invMake . " successfully added!</p>";
+                $message = "<p class='successMsg'>$invMake successfully added!</p>";
                 include '../view/add-vehicle.php';
                 exit;
             } else {
@@ -116,7 +116,7 @@
             $invId = filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT);
             $invInfo = getInvItemInfo($invId);
             if(count($invInfo) < 1) {
-                $message = '<p>Sorry, no vehicle information could be found.</p>';
+                $message = '<p class="errorMsg">Sorry, no vehicle information could be found.</p>';
             }
             include '../view/vehicle-update.php';
             exit;
@@ -136,7 +136,7 @@
             if (empty($invMake) || empty($invModel) || empty($invDescription) ||
                 empty($invImage) || empty($invThumbnail) || empty($invPrice) ||
                 empty($invStock) || empty($invColor) || empty($classificationId)) {
-                $message = '<p>Please complete all information for the updated item! Double check the classification of the item.</p>';
+                $message = '<p class="errorMsg">Please complete all information for the updated item! Double check the classification of the item.</p>';
                 include '../view/vehicle-update.php';
                 exit;
             }
@@ -144,13 +144,40 @@
                 $invImage, $invThumbnail, $invPrice, $invStock,
                 $invColor, $classificationId, $invId);
             if ($updateResult) {
-                $message = "<p class='notify'>Congratulations, the $invMake $invModel was successfully updated.</p>";
+                $message = "<p class='successMsg'>Congratulations, the $invMake $invModel was successfully updated.</p>";
                 $_SESSION['message'] = $message;
-                header('location: /phpmotors/vehicles/');
+                header('Location: /phpmotors/vehicles/');
                 exit;
             } else {
-                $message = "<p>Error: The vehicle was not updated.</p>";
+                $message = "<p class='errorMsg'>Error: The vehicle was not updated.</p>";
                 include '../view/vehicle-update.php';
+                exit;
+            }
+            break;
+        case 'del':
+            $invId = trim(filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT));
+            $invInfo = getInvItemInfo($invId);
+            if(count($invInfo) < 1) {
+                $message = '<p class="errorMsg">Sorry, no vehicle information could be found.</p>';
+            }
+            include '../view/vehicle-delete.php';
+            exit;
+            break;
+        case 'deleteVehicle':
+            $invMake = trim(filter_input(INPUT_POST, 'invMake', FILTER_SANITIZE_STRING));
+            $invModel = trim(filter_input(INPUT_POST, 'invModel', FILTER_SANITIZE_STRING));
+            $invId = trim(filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT));
+
+            $deleteResult = deleteVehicle($invId);
+            if ($deleteResult) {
+                $message = "<p class='successMsg'>Congratulations, the $invMake $invModel was successfully deleted.</p>";
+                $_SESSION['message'] = $message;
+                header('Location: /phpmotors/vehicles/');
+                exit;
+            } else {
+                $message = "<p class='errorMsg'>Error: $invMake $invModel was not deleted.</p>";
+                $_SESSION['message'] = $message;
+                header('Location: /phpmotors/vehicles/');
                 exit;
             }
             break;
