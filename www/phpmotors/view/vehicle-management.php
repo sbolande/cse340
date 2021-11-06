@@ -4,6 +4,10 @@
         header('Location: /phpmotors/');
         exit;
     }
+    // set message
+    if (isset($_SESSION['message'])) {
+        $message = $_SESSION['message'];
+    }
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -33,3 +37,4 @@
         <script src="/phpmotors/js/inventory.js"></script>
     </body>
 </html>
+<? unset($_SESSION['message']); ?>
