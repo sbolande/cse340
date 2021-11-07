@@ -13,10 +13,15 @@
         <? require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/view/modules/header.php"); ?>
         <div id="content">
             <h1><? echo $_SESSION['clientData']['clientFirstname'] . ' ' . $_SESSION['clientData']['clientLastname']; ?></h1>
+            <? if (isset($_SESSION['message'])){
+                    echo $_SESSION['message'];
+                } ?>
             <div class="content__data">
-                <table id="userDataTable">
-                    <tbody>
-                        <tr>
+                <p class="loggedinMsg">You are currently logged in.</p>
+                <p class="alt-form"><a class="alt-form-link" href="/phpmotors/accounts/?action=update" title="Edit account info or change password">Update Account Info</a></p>
+                <!-- <table id="userDataTable">
+                    <tbody> -->
+                        <!-- <tr>
                             <th>First Name</th>
                             <td><? echo $_SESSION['clientData']['clientFirstname']; ?></td>
                         </tr>
@@ -27,15 +32,17 @@
                         <tr>
                             <th>Email</th>
                             <td><? echo $_SESSION['clientData']['clientEmail']; ?></td>
-                        </tr>
+                        </tr> -->
                         <!-- <tr>
                             <th>User Level</th>
                             <td><? echo $_SESSION['clientData']['clientLevel']; ?></td>
                         </tr> -->
-                    </tbody>
+                    <!-- </tbody> -->
                 </table>
                 <? if ($_SESSION['clientData']['clientLevel'] > 1){ ?>
-                    <p class="alt-form"><a class="alt-form-link" href="/phpmotors/vehicles/" title="Vehicle and car classification management">Manage Vehicles</a></p>
+                    <hr>
+                    <h2>Vehicles Management</h2>
+                    <p class="alt-form">Add classifications, add vehicles, or update vehicles: <a class="alt-form-link" href="/phpmotors/vehicles/" title="Vehicle and car classification management">Manage Vehicles</a></p>
                 <? } ?>
             </div>
         </div>

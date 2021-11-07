@@ -135,6 +135,7 @@ body {
     margin-top: -10px;
 }
 .errorMsg { color: var(--error-color); }
+.loggedinMsg { color: var(--success-color); }
 /* .successMsg {} */
 .alt-form { font-size: 20px; }
 .alt-form-link { color: var(--color-five); }
@@ -249,11 +250,11 @@ label {
     background-color: var(--color-two);
     cursor: pointer;
 }
-#submit:not([disabled]) {
+.submit:not([disabled]) {
     background-color: var(--color-four);
     color: var(--color-six);
 }
-#submit:hover, #submit:disabled { color: var(--color-one); }
+.submit:hover, .submit:disabled { color: var(--color-one); }
 .form li input:not(:placeholder-shown):not(:focus):invalid { border: 1px solid var(--error-color); }
 .form li input:not([type="submit"]):valid { border: 1px solid var(--success-color); }
 

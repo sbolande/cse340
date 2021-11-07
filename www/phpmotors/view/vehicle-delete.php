@@ -41,7 +41,7 @@
                             <input type="checkbox" name="confirm" id="confirm" onchange="toggleSubmit(this)">
                             <span class="hint"><strong>The delete is permanent!</strong></span>
                         </li>
-                        <li><input id="submit" type="submit" value="Delete Vehicle" disabled></li>
+                        <li><input class="submit" id="delVehicleSubmit" type="submit" value="Delete Vehicle" disabled></li>
                     </ul>
                     <input type="hidden" name="action" value="deleteVehicle">
                     <input type="hidden" name="invId" value="<? if(isset($invInfo['invId'])){echo $invInfo['invId'];} ?>">
@@ -51,7 +51,7 @@
         <? require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/view/modules/footer.php"); ?>
         <script>
             function toggleSubmit(check) {
-                let submit = document.forms['deleteVehicle'].elements['submit'];
+                let submit = document.forms['deleteVehicle'].elements['delVehicleSubmit'];
                 submit.disabled = !check.checked;
             }
         </script>

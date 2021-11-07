@@ -25,7 +25,7 @@
                             <input type="text" name="classificationName" id="classificationName" maxlength="30"
                             placeholder=" " <? if(isset($classificationName)){echo "value='$classificationName'";} ?> required>
                         </li>
-                        <li><input id="submit" type="submit" value="Submit"></li>
+                        <li><input class="submit" type="submit" value="Submit"></li>
                     </ul>
                     <input type="hidden" name="action" value="addClassification">
                 </form>

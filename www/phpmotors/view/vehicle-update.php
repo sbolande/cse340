@@ -109,7 +109,7 @@
                                 <option value="Purple">
                             </datalist>
                         </li>
-                        <li><input id="submit" type="submit" value="Update Vehicle"></li>
+                        <li><input class="submit" type="submit" value="Update Vehicle"></li>
                     </ul>
                     <input type="hidden" name="action" value="updateVehicle">
                     <input type="hidden" name="invId" value="<? if(isset($invInfo['invId'])){echo $invInfo['invId'];}elseif(isset($invId)){echo $invId;} ?>">

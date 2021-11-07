@@ -37,7 +37,7 @@
                             <span class="hint">At least 8 characters, 1 uppercase, 1 number, and 1 special character<br><br></span>
                             <span id="showPass" class="hint" onclick="togglePassword()">Show Password</span>
                         </li>
-                        <li><input id="submit" type="submit" value="Create Account"></li>
+                        <li><input class="submit" type="submit" value="Create Account"></li>
                     </ul>
                     <input type="hidden" name="action" value="register">
                 </form>
