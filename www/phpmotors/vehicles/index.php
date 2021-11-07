@@ -20,6 +20,20 @@
         $action = filter_input(INPUT_GET, 'action');
     }
     switch ($action) {
+        /******************** CLIENT CASES ********************/
+        case 'classification':
+            $classificationName = filter_input(INPUT_GET, 'classificationName', FILTER_SANITIZE_STRING);
+            $vehicles = getVehiclesByClassification($classificationName);
+            if (!count($vehicles)) {
+                $message = "<p class='errorMsg'>Sorry, no $classificationName vehicles could be found.</p>";
+            } else {
+                $vehicleDisplay = buildVehiclesDisplay($vehicles);
+            }
+
+            include '../view/classification.php';
+            exit;
+            break;
+        /******************** ADMIN CASES ********************/
         case 'manageClassification':
             include '../view/add-classification.php';
             break;

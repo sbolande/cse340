@@ -5,7 +5,7 @@
         $navList = '<ul id="navbar">';
         $navList .= "<li><a class='navbar-item' href='/phpmotors/' title='View the PHP Motors home page'>Home</a></li>";
         foreach ($classifications as $classification) {
-            $navList .= "<li><a class='navbar-item' href='/phpmotors/?action=";
+            $navList .= "<li><a class='navbar-item' href='/phpmotors/vehicles/?action=classification&classificationName=";
             $navList .= urlencode($classification['classificationName']);
             $navList .= "' title='View our $classification[classificationName] product line'>$classification[classificationName]</a></li>";
         }

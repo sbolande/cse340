@@ -54,7 +54,7 @@ body {
 }
 .navbar-item:active { color: var(--color-one); }
 
-/******************** BASIC CONTENT ********************/
+/******************** HOME CONTENT ********************/
 .car {
     display: flex;
     flex-direction: column;
@@ -129,9 +129,9 @@ body {
     height: 50px;
     margin: 10px;
 }
-/* ADDITIONAL CONTENT */
+/******************** BASIC CONTENT ********************/
 .content__data {
-    margin-left: 10px;
+    margin: 0 10px;
     margin-top: -10px;
 }
 .errorMsg { color: var(--error-color); }
@@ -140,6 +140,29 @@ body {
 .alt-form { font-size: 20px; }
 .alt-form-link { color: var(--color-five); }
 .alt-form-link:hover { color: var(--color-three); }
+
+/******************** VEHICLE CONTENT ********************/
+#inv-display {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+}
+#inv-display hr {
+    width: 97%;
+    border: 3px solid var(--color-five);
+}
+#inv-display li {
+    margin-bottom: .5em;
+    border: 1px var(--color-one) solid;
+    list-style-type: none;
+    flex: 1 1 auto;
+    text-align: center;
+}
+#inv-display li img {
+    min-width: 70%;
+    max-width: 100%;
+}
 
 /******************** TABLES ********************/
 table { border-collapse: collapse; }
@@ -315,4 +338,21 @@ footer hr {
     .car__reviews__container { grid-area: review; }
     /* UPGRADES */
     .car__upgrades__container { grid-area: upgrade }
+
+    /***** VEHICLES CONTENT *****/
+    #inv-display {
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+    #inv-display h2 { font-size: 1rem; }
+    #inv-display li {
+        max-width: 200px;
+        height: 250px;
+        margin: 0 2px;
+        flex: 1 0 auto;
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-end;
+    }
+    #inv-display li img { margin-bottom: auto; }
 }
