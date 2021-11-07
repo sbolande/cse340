@@ -9,9 +9,7 @@
         <div id="content">
             <h1>Registration</h1>
             <div class="content__data">
-                <? if (isset($message)){
-                    echo $message;
-                } ?>
+                <? if(isset($message)){echo $message;} ?>
                 <form class="form" method="post" action="/phpmotors/accounts/" name="registration">
                     <ul>
                         <li>

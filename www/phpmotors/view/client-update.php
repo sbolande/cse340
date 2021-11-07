@@ -16,9 +16,7 @@
             <h1>Update Account</h1>
             <div class="content__data">
                 <h2>Update Account Information</h2>
-                <? if (isset($accountMessage)){
-                    echo $accountMessage;
-                } ?>
+                <? if(isset($accountMessage)){echo $accountMessage;} ?>
                 <form class="form" method="post" action="/phpmotors/accounts/" name="updateAccount">
                     <ul>
                         <li>

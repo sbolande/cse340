@@ -32,9 +32,7 @@
         <div id="content">
             <h1>Add a New Vehicle</h1>
             <div class="content__data">
-                <? if (isset($message)){
-                    echo $message;
-                } ?>
+                <? if(isset($message)){echo $message;} ?>
                 <form class="form" method="post" action="/phpmotors/vehicles/" name="addVehicle">
                     <ul>
                         <li>

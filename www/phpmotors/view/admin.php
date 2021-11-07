@@ -13,9 +13,7 @@
         <? require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/view/modules/header.php"); ?>
         <div id="content">
             <h1><? echo $_SESSION['clientData']['clientFirstname'] . ' ' . $_SESSION['clientData']['clientLastname']; ?></h1>
-            <? if (isset($_SESSION['message'])){
-                    echo $_SESSION['message'];
-                } ?>
+            <? if(isset($_SESSION['message'])){echo $_SESSION['message'];} ?>
             <div class="content__data">
                 <p class="loggedinMsg">You are currently logged in.</p>
                 <p class="alt-form"><a class="alt-form-link" href="/phpmotors/accounts/?action=update" title="Edit account info or change password">Update Account Info</a></p>
@@ -39,7 +37,7 @@
                         </tr> -->
                     <!-- </tbody> -->
                 </table>
-                <? if ($_SESSION['clientData']['clientLevel'] > 1){ ?>
+                <? if($_SESSION['clientData']['clientLevel'] > 1){ ?>
                     <hr>
                     <h2>Vehicles Management</h2>
                     <p class="alt-form">Add classifications, add vehicles, or update vehicles: <a class="alt-form-link" href="/phpmotors/vehicles/" title="Vehicle and car classification management">Manage Vehicles</a></p>

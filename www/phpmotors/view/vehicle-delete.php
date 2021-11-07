@@ -17,9 +17,7 @@
             <h1><? if(isset($invInfo['invMake']) && isset($invInfo['invModel'])){ 
 	            echo "Delete $invInfo[invMake] $invInfo[invModel]";} ?></h1>
             <div class="content__data">
-                <? if (isset($message)){
-                    echo $message;
-                } ?>
+                <? if(isset($message)){echo $message;} ?>
                 <form class="form" method="post" action="/phpmotors/vehicles/" name="deleteVehicle">
                     <ul>
                         <li>
