@@ -10,7 +10,7 @@
             <h1>Welcome to PHP Motors!</h1>
             <div class="car">
                 <div class="car__image__container">
-                    <img class="car__image" src="./images/delorean.jpg" alt="DMC Delorean">
+                    <img class="car__image" src="./images/vehicles/delorean.jpg" alt="DMC Delorean">
                     <div class="car__features">
                         <strong class="car__name">DMC Delorean</strong>
                         <p>3 Cup holders</p>
