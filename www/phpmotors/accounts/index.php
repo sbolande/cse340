@@ -158,7 +158,7 @@
                 header('Location: /phpmotors/accounts/');
                 exit;
             } else {
-                $passwordMessage = "<p class='errorMsg'>Sorry $_SESSION[clientData][clientFirstname], but the password change failed. Please try again.</p>";
+                $passwordMessage = "<p class='errorMsg'>Sorry " . $_SESSION['clientData']['clientFirstname'] . ", but the password change failed. Please try again.</p>";
                 include '../view/client-update.php';
                 exit;
             }
