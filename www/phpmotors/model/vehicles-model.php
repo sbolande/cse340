@@ -15,7 +15,7 @@
 
     // BUILD VIEW/CLASSIFICATION.PHP BODY CONTENT
     function buildVehiclesDisplay($vehicles) {
-        $dv = '<ul id="inv-display">';
+        $dv = '<ul class="inv-display">';
         foreach ($vehicles as $vehicle) {
             $dv .= '<li>';
             $dv .= "<a href='/phpmotors/vehicles/?action=details&invId=$vehicle[invId]' title='$vehicle[invModel] Details'>";
@@ -23,7 +23,7 @@
             $dv .= '</a>';
             $dv .= '<hr>';
             $dv .= "<h2>$vehicle[invMake] $vehicle[invModel]</h2>";
-            $dv .= "<span>$$vehicle[invPrice]</span>";
+            $dv .= '<span>$' . number_format($vehicle['invPrice'], 2) . '</span>';
             $dv .= '</li>';
         }
         $dv .= '</ul>';
