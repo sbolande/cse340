@@ -27,10 +27,22 @@
             if (!count($vehicles)) {
                 $message = "<p class='errorMsg'>Sorry, no $classificationName vehicles could be found.</p>";
             } else {
-                $vehicleDisplay = buildVehiclesDisplay($vehicles);
+                $vehiclesDisplay = buildVehiclesDisplay($vehicles);
             }
 
             include '../view/classification.php';
+            exit;
+            break;
+        case 'details':
+            $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
+            $vehicle = getVehicle($invId);
+            if (!count($vehicle)) {
+                $message = "<p class='errorMsg'>Sorry, no details for that vehicle could be found.</p>";
+            } else {
+                $vehicleDisplay = buildVehicleDetailDisplay($vehicle);
+            }
+
+            include '../view/vehicle-details.php';
             exit;
             break;
         /******************** ADMIN CASES ********************/

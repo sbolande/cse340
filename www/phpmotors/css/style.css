@@ -94,9 +94,11 @@ body {
     margin-bottom: 10px;
 }
 /* REVIEWS */
-.car__reviews__container { margin: 10px 25px; }
+.car__reviews__container,
+.car__info__container { margin: 10px 25px; }
 /* UPGRADES */
-.car__upgrades__container { margin: 10px 25px; }
+.car__upgrades__container,
+.car__description { margin: 10px 25px; }
 .car__upgrades {
     display: grid;
     grid-template:
@@ -335,9 +337,11 @@ footer hr {
         font-size: medium;
     }
     /* REVIEWS */
-    .car__reviews__container { grid-area: review; }
+    .car__reviews__container,
+    .car__info__container { grid-area: review; }
     /* UPGRADES */
-    .car__upgrades__container { grid-area: upgrade }
+    .car__upgrades__container,
+    .car__description { grid-area: upgrade; }
 
     /***** VEHICLES CONTENT *****/
     #inv-display {
