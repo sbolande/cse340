@@ -52,4 +52,39 @@
         $stmt->closeCursor(); 
         return $inventory; 
     }
+
+    // build VIEW/CLASSIFICATION.PHP body content
+    function buildVehiclesDisplay($vehicles) {
+        $dv = '<ul class="inv-display">';
+        foreach ($vehicles as $vehicle) {
+            $dv .= '<li>';
+            $dv .= "<a href='/phpmotors/vehicles/?action=details&invId=$vehicle[invId]' title='$vehicle[invModel] Details'>";
+            $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
+            $dv .= '</a>';
+            $dv .= '<hr>';
+            $dv .= "<h2>$vehicle[invMake] $vehicle[invModel]</h2>";
+            $dv .= '<span>$' . number_format($vehicle['invPrice'], 2) . '</span>';
+            $dv .= '</li>';
+        }
+        $dv .= '</ul>';
+        return $dv;
+    }
+
+    // build VIEW/VEHICLE-DETAILS.PHP body content
+    function buildVehicleDetailDisplay($vehicle) {
+        $dv = '<div class="car__image__container">';
+        $dv .= "<img class='car__image' src='$vehicle[invImage]' alt='$vehicle[invMake] $vehicle[invModel]'>";
+        $dv .= '</div>';
+        $dv .= '<div class="car__info__container">';
+        $dv .= "<strong class='car__name'>$vehicle[invMake] $vehicle[invModel]</strong>";
+        $dv .= "<p>$vehicle[invColor] - $vehicle[classificationName]</p>";
+        $dv .= '<p>$' . number_format($vehicle['invPrice'], 2) . '</p>';
+        $dv .= "<p>$vehicle[invStock] currently in stock</p>";
+        $dv .= '</div>';
+        $dv .= '<div class="car__description">';
+        $dv .= "<p>$vehicle[invDescription]</p>";
+        $dv .= '</div>';
+
+        return $dv;
+    }
 ?>
