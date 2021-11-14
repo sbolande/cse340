@@ -8,7 +8,7 @@
         <? require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/view/modules/header.php"); ?>
         <div id="content">
             <h1>Welcome to PHP Motors!</h1>
-            <div class="car">
+            <div class="car home-page">
                 <div class="car__image__container">
                     <img class="car__image" src="./images/vehicles/delorean.jpg" alt="DMC Delorean">
                     <div class="car__features">

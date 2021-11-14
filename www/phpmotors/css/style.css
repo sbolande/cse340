@@ -64,7 +64,10 @@ body {
     position: relative;
     text-align: center;
 }
-.car__image { width: 90%; }
+.car__image {
+    width: 90%;
+    max-width: 880px;
+}
 .car__features {
     display: inline;
     position: absolute;
@@ -310,6 +313,28 @@ footer hr {
     background-color: var(--color-five);
 }
 
+/******************** MEDIUM SCREEN ********************/
+@media (min-width: 850px) {
+    /* CAR DETAILS PAGE */
+    .car:not([class*="home-page"]) {
+        display: grid;
+        grid-template:
+            "image info"
+            "image description"
+            "image .";
+        grid-template-columns: 70% 30%;
+    }
+    /* INFO */
+    .car__info__container { grid-area: info; }
+    /* DESCRIPTION */
+    .car__description {
+        grid-area: description;
+        border-top: none;
+        padding-right: 60px;
+        margin-right: 0;
+    }
+}
+
 /******************** BIG SCREEN ********************/
 @media (min-width: 620px) {
     html {
@@ -326,7 +351,8 @@ footer hr {
     }
 
     /***** CONTENT *****/
-    .car {
+    /* HOMEPAGE */
+    .car.home-page {
         display: grid;
         grid-template:
             "image image"
@@ -335,7 +361,11 @@ footer hr {
         column-gap: 10px;
     }
     /* IMAGE CONTAINER */
-    .car__image__container { grid-area: image; }
+    .car__image__container {
+        grid-area: image;
+        border-right: 1px solid var(--color-five);
+        padding-right: 40px;
+    }
     #own-today {
         position: absolute;
         top: 100px;
@@ -346,16 +376,6 @@ footer hr {
     }
     /* REVIEWS */
     .car__reviews__container { grid-area: review; }
-    /* INFO */
-    .car__info__container { grid-area: review; }
-    /* DESCRIPTION */
-    .car__description {
-        grid-area: upgrade;
-        border-top: none;
-        border-right: 1px solid var(--color-five);
-        padding-right: 60px;
-        margin-right: 0;
-    }
     /* UPGRADES */
     .car__upgrades__container { grid-area: upgrade; }
 
