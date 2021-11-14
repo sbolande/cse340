@@ -43,6 +43,10 @@
                     </ul>
                     <input type="hidden" name="action" value="upload">
                 </form>
+                <hr>
+                <h2>Existing Images</h2>
+                <p class="notice">If deleting an image, don't forget to delete the thumbnail (and vice versa) too!</p>
+                <? if(isset($imageDisplay)){echo $imageDisplay;} ?>
             </div>
         </div>
         <? require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/view/modules/footer.php"); ?>

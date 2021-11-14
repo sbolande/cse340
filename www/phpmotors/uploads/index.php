@@ -34,9 +34,9 @@
             $imageCheck = checkExistingImage($imgName);
                 
             if($imageCheck){
-                $message = '<p class="notice">An image by that name already exists.</p>';
+                $message = '<p class="errorMsg">An image by that name already exists.</p>';
             } elseif (empty($invId) || empty($imgName)) {
-                $message = '<p class="notice">You must select a vehicle and image file for the vehicle.</p>';
+                $message = '<p class="errorMsg">You must select a vehicle and image file for the vehicle.</p>';
             } else {
                 // Upload the image, store the returned path to the file
                 $imgPath = uploadFile('file1');
@@ -46,9 +46,9 @@
                     
                 // Set a message based on the insert result
                 if ($result) {
-                    $message = '<p class="notice">The upload succeeded.</p>';
+                    $message = '<p class="successMsg">The upload succeeded.</p>';
                 } else {
-                    $message = '<p class="notice">Sorry, the upload failed.</p>';
+                    $message = '<p class="errorMsg">Sorry, the upload failed.</p>';
                 }
             }
                 
@@ -79,9 +79,9 @@
                 
             // Set a message based on the delete result
             if ($remove) {
-                $message = "<p class='notice'>$filename was successfully deleted.</p>";
+                $message = "<p class='successMsg'>$filename was successfully deleted.</p>";
             } else {
-                $message = "<p class='notice'>$filename was NOT deleted.</p>";
+                $message = "<p class='errorMsg'>$filename was NOT deleted.</p>";
             }
                 
             // Store message to session
@@ -98,7 +98,7 @@
             if (count($imageArray)) {
                 $imageDisplay = buildImageDisplay($imageArray);
             } else {
-                $imageDisplay = '<p class="notice">Sorry, no images could be found.</p>';
+                $imageDisplay = '<p class="errorMsg">Sorry, no images could be found.</p>';
             }
                     
             // Get vehicles information from database
