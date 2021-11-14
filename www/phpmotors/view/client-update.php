@@ -55,9 +55,7 @@
                 </form>
                 <hr>
                 <h2>Change Password</h2>
-                <? if (isset($passwordMessage)){
-                    echo $passwordMessage;
-                } ?>
+                <? if(isset($passwordMessage)){echo $passwordMessage;} ?>
                 <form class="form" method="post" action="/phpmotors/accounts/" name="changePassword">
                     <p class="hint">Submitting will change your current password! You will no longer be able to login using your old password!</p>
                     <ul>
