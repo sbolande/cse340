@@ -234,7 +234,7 @@ tbody tr:hover { background-color: var(--color-one); }
     margin-bottom: 0px;
     text-align: center;
 }
-label {
+label, legend {
     display: block;
     float: left;
     margin-top: -17px;
@@ -243,7 +243,11 @@ label {
     color: var(--color-four);
     overflow: hidden;
 }
-.form input, .form select {
+legend {
+    margin-top: -20px;
+    margin-left: -14px;
+}
+.form input:not([type="radio"]), .form select {
     box-sizing: border-box;
     width: 100%;
     display: block;
@@ -253,6 +257,15 @@ label {
     line-height: 25px;
     font-size: 16px;
     padding: 0px;
+}
+fieldset { border: none; }
+fieldset label {
+    color: black;
+}
+.radio-input {
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
 }
 .form select option[data-default] { color: var(--color-two); }
 .form textarea {
