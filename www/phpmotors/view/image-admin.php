@@ -52,3 +52,4 @@
         <? require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/view/modules/footer.php"); ?>
     </body>
 </html>
+<? unset($_SESSION['message']); ?>
