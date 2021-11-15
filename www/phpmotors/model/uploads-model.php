@@ -61,4 +61,16 @@
         $stmt->closeCursor();
         return $imageMatch;
     }
+
+    // Obtain non-primary thumbnails
+    function getSecondaryThumbnails($invId) {
+        $db = phpmotorsConnect();
+        $sql = "SELECT * FROM images WHERE invId = :invId AND imgPrimary = 0 AND imgName LIKE '%-tn.%'";
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
+        $stmt->execute();
+        $thumbnails = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $thumbnails;
+    }
 ?>

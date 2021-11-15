@@ -4,7 +4,7 @@
     // FETCH VEHICLES BY CLASS NAME
     function getVehiclesByClassification($classificationName) {
         $db = phpmotorsConnect();
-        $sql = 'SELECT * FROM inventory WHERE classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)';
+        $sql = "SELECT * FROM inventory JOIN images ON inventory.invId = images.invId WHERE images.imgPrimary = 1 AND images.imgName LIKE '%-tn.%' AND inventory.classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)";
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':classificationName', $classificationName, PDO::PARAM_STR);
         $stmt->execute();
@@ -17,7 +17,7 @@
     function getVehicle($invId) {
         // JOIN inventory & classification
         $db = phpmotorsConnect();
-        $sql = 'SELECT * FROM inventory INNER JOIN carclassification ON inventory.classificationId = carclassification.classificationId WHERE invId = :invId';
+        $sql = "SELECT * FROM inventory JOIN carclassification ON inventory.classificationId = carclassification.classificationId JOIN images ON images.invId = inventory.invId WHERE inventory.invId = :invId AND images.imgPrimary = 1 AND images.imgName NOT LIKE '%-tn.%'";
         $stmt = $db->prepare($sql);
         $stmt->bindValue(':invId', $invId, PDO::PARAM_STR);
         $stmt->execute();

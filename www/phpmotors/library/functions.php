@@ -59,7 +59,7 @@
         foreach ($vehicles as $vehicle) {
             $dv .= '<li>';
             $dv .= "<a href='/phpmotors/vehicles/?action=details&invId=$vehicle[invId]' title='$vehicle[invModel] Details'>";
-            $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
+            $dv .= "<img src='$vehicle[imgPath]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
             $dv .= '</a>';
             $dv .= '<hr>';
             $dv .= "<h2>$vehicle[invMake] $vehicle[invModel]</h2>";
@@ -71,9 +71,15 @@
     }
 
     // build VIEW/VEHICLE-DETAILS.PHP body content
-    function buildVehicleDetailDisplay($vehicle) {
+    function buildVehicleDetailDisplay($vehicle, $thumbnails) {
         $dv = '<div class="car__image__container">';
-        $dv .= "<img class='car__image' src='$vehicle[invImage]' alt='$vehicle[invMake] $vehicle[invModel]'>";
+        $dv .= "<img class='car__image' src='$vehicle[imgPath]' alt='$vehicle[invMake] $vehicle[invModel]'>";
+        $dv .= '<div class="car__thumbnail__container">';
+        $dv .= '<h2 class="car__thumbnail__container--header">Additional Images</h2>';
+        foreach ($thumbnails as $tn) {
+            $dv .= "<img class='car__thumbnail' src='$tn[imgPath]' alt='$vehicle[invMake] $vehicle[invModel] secondary thumbnail'>";
+        }
+        $dv .= '</div>';
         $dv .= '</div>';
         $dv .= '<div class="car__info__container">';
         $dv .= "<strong class='car__name'>$vehicle[invMake] $vehicle[invModel]</strong>";

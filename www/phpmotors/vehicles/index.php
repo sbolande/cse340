@@ -9,6 +9,8 @@
     require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/model/main-model.php");
     // get the vehicles model
     require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/model/vehicles-model.php");
+    // get the uploads model
+    require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/model/uploads-model.php");
 
     // get classifications array
     $classifications = getClassifications();
@@ -36,10 +38,11 @@
         case 'details':
             $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
             $vehicle = getVehicle($invId);
+            $thumbnails = getSecondaryThumbnails($invId);
             if (!count($vehicle)) {
                 $message = "<p class='errorMsg'>Sorry, no details for that vehicle could be found.</p>";
             } else {
-                $vehicleDisplay = buildVehicleDetailDisplay($vehicle);
+                $vehicleDisplay = buildVehicleDetailDisplay($vehicle, $thumbnails);
             }
 
             include '../view/vehicle-details.php';
