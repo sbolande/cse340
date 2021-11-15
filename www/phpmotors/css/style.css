@@ -215,6 +215,35 @@ tbody tr:hover { background-color: var(--color-one); }
     color: var(--color-six);
 }
 
+/******************** IMAGE UPLOAD CONTENT ********************/
+#image-display {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+}
+#image-display li {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 70%;
+    padding: 6px;
+    border-top: 1px solid var(--color-two);
+}
+#image-display a {
+    background-color: var(--color-three);
+    border: 1px solid var(--color-four);
+    border-radius: 5px;
+    padding: 1px 4px;
+    color: black;
+    text-decoration: none;
+}
+#image-display a:hover {
+    background-color: var(--color-four);
+    color: var(--color-six);
+}
+
 /******************** FORMS ********************/
 .form { max-width: 400px; }
 .form ul {
@@ -408,4 +437,11 @@ footer hr {
         justify-content: flex-end;
     }
     .inv-display li a { margin-bottom: auto; }
+
+    /***** IMAGE UPLOAD CONTENT *****/
+    #image-display { flex-flow: row wrap; }
+    #image-display li {
+        width: 45%;
+        border-top: none;
+    }
 }
