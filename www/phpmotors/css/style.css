@@ -421,7 +421,7 @@ footer hr {
         padding: 0;
         margin: 0;
     }
-    .car__thumbnail__container { flex: row wrap; }
+    .car__thumbnail__container { flex-flow: row wrap; }
     .car__thumbnail:hover {
         position: relative;
         top: -25px;
