@@ -84,6 +84,9 @@
         $dv .= '<div class="car__description">';
         $dv .= "<p>$vehicle[invDescription]</p>";
         $dv .= '</div>';
+        if (!count($thumbnails)) {
+            return $dv;
+        }
         $dv .= '<div class="car__thumbnail__container">';
         $dv .= '<h2 class="car__thumbnail__container--header">Additional Images</h2>';
         foreach ($thumbnails as $tn) {
