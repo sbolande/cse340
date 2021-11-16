@@ -74,12 +74,6 @@
     function buildVehicleDetailDisplay($vehicle, $thumbnails) {
         $dv = '<div class="car__image__container">';
         $dv .= "<img class='car__image' src='$vehicle[imgPath]' alt='$vehicle[invMake] $vehicle[invModel]'>";
-        $dv .= '<div class="car__thumbnail__container">';
-        $dv .= '<h2 class="car__thumbnail__container--header">Additional Images</h2>';
-        foreach ($thumbnails as $tn) {
-            $dv .= "<img class='car__thumbnail' src='$tn[imgPath]' alt='$vehicle[invMake] $vehicle[invModel] secondary thumbnail'>";
-        }
-        $dv .= '</div>';
         $dv .= '</div>';
         $dv .= '<div class="car__info__container">';
         $dv .= "<strong class='car__name'>$vehicle[invMake] $vehicle[invModel]</strong>";
@@ -89,6 +83,12 @@
         $dv .= '</div>';
         $dv .= '<div class="car__description">';
         $dv .= "<p>$vehicle[invDescription]</p>";
+        $dv .= '</div>';
+        $dv .= '<div class="car__thumbnail__container">';
+        $dv .= '<h2 class="car__thumbnail__container--header">Additional Images</h2>';
+        foreach ($thumbnails as $tn) {
+            $dv .= "<img class='car__thumbnail' src='$tn[imgPath]' alt='$vehicle[invMake] $vehicle[invModel] secondary thumbnail'>";
+        }
         $dv .= '</div>';
 
         return $dv;
