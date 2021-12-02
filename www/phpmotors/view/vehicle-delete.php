@@ -18,7 +18,7 @@
 	            echo "Delete $invInfo[invMake] $invInfo[invModel]";} ?></h1>
             <div class="content__data">
                 <? if(isset($message)){echo $message;} ?>
-                <form class="form" method="post" action="/phpmotors/vehicles/" name="deleteVehicle">
+                <form class="form delete-form" method="post" action="/phpmotors/vehicles/" name="deleteVehicle">
                     <ul>
                         <li>
                             <label for="invMake">Make</label>

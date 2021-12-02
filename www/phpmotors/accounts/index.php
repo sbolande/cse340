@@ -9,6 +9,8 @@
     require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/model/main-model.php");
     // get the accounts model
     require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/model/accounts-model.php");
+    // get the reviews model
+    require_once($_SERVER['DOCUMENT_ROOT'] . "/phpmotors/model/reviews-model.php");
 
     // get classifications array
     $classifications = getClassifications();
@@ -48,6 +50,8 @@
             array_pop($clientData);
             // store session vars
             $_SESSION['clientData'] = $clientData;
+            $reviews = getClientReviews($_SESSION['clientData']['clientId']);
+            $reviewsDisplay = buildClientReviewsDisplay($reviews);
             // send them to the admin view
             include '../view/admin.php';
 
@@ -172,6 +176,10 @@
             exit;
             break;
         default:
+            $reviews = getClientReviews($_SESSION['clientData']['clientId']);
+            $reviewsDisplay = buildClientReviewsDisplay($reviews);
             include '../view/admin.php';
+            exit;
+            break;
     }
 ?>

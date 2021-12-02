@@ -9,7 +9,7 @@
         <div id="content">
             <h1><? echo $vehicle['invMake'] . ' ' . $vehicle['invModel']; ?></h1>
             <? if(isset($message)){echo $message;} ?>
-            <div class="car">
+            <div class="car details">
                 <? if(isset($vehicleDisplay)){
                     echo $vehicleDisplay;
                 } ?>

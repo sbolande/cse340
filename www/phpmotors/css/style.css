@@ -6,8 +6,9 @@
     --color-four: #1e5585;
     --color-five: #3a3a3a;
     --color-six: #ffffff;
+    --color-seven: #e8e8e8;
     --error-color: #b60000;
-    --success-color: #23b623;
+    --success-color: #115f11;
 }
 
 body {
@@ -105,6 +106,25 @@ body {
 }
 /* REVIEWS */
 .car__reviews__container { margin: 10px 25px; }
+.car.details .car__reviews__container { width: 520px; }
+.car.details .car__reviews {
+    list-style-type: none;
+    padding-left: 0;
+}
+.car.details .review {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid var(--color-two);
+    border-radius: 12px;
+    border-bottom-left-radius: 0px;
+    font-size: small;
+}
+.car.details .reviewText {
+    display: inline-block;
+    padding-left: 4px;
+    font-size: medium;
+}
+.car.details .reviewText::before { content: '-- '; }
 /* INFO */
 .car__info__container { margin: 10px 60px; }
 .car__info__container > strong,
@@ -206,11 +226,13 @@ tbody tr:hover { background-color: var(--color-one); }
 .noshow { display: none; }
 
 .invDisplayName { min-width: 250px; }
-.invDisplayLink {
+.invDisplayLink,
+.reviewLink {
     min-width: 60px;
     text-align: center;
 }
-.invDisplayLink a {
+.invDisplayLink a,
+.reviewLink a {
     background-color: var(--color-three);
     border: 1px solid var(--color-four);
     border-radius: 5px;
@@ -218,10 +240,14 @@ tbody tr:hover { background-color: var(--color-one); }
     color: black;
     text-decoration: none;
 }
-.invDisplayLink a:hover {
+.invDisplayLink a:hover,
+.reviewLink a:hover {
     background-color: var(--color-four);
     color: var(--color-six);
 }
+
+/* REVIEW MGMT TABLE */
+#clientReviews { font-size: small; }
 
 /******************** IMAGE UPLOAD CONTENT ********************/
 #image-display {
@@ -296,9 +322,7 @@ legend {
     padding: 0px;
 }
 fieldset { border: none; }
-fieldset label {
-    color: black;
-}
+fieldset label { color: black; }
 .radio-input {
     display: flex;
     flex-flow: row;
@@ -336,6 +360,11 @@ fieldset label {
     background-color: var(--color-two);
     cursor: pointer;
 }
+input:read-only, textarea:read-only {
+    cursor: default;
+    background-color: var(--color-seven);
+    border-radius: 3px;
+}
 .submit:not([disabled]) {
     background-color: var(--color-four);
     color: var(--color-six);
@@ -351,6 +380,7 @@ fieldset label {
     border-radius: 4px;
     font-size: 14px;
 }
+#confirm { cursor: pointer; }
 
 /******************** FOOTER ********************/
 footer {
@@ -371,7 +401,8 @@ footer hr {
         grid-template:
             "tn image info"
             "tn image description"
-            "tn image .";
+            "tn image ."
+            "review review review";
         grid-template-columns: 10% 60% 30%;
     }
     /* INFO */
@@ -383,6 +414,8 @@ footer hr {
         padding-right: 60px;
         margin-right: 0;
     }
+    /* REVIEWS */
+    .car__reviews__container { grid-area: review; }
 }
 
 /******************** BIG SCREEN ********************/
