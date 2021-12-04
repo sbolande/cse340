@@ -28,7 +28,7 @@
                         </li>
                         <li>
                             <label for="reviewText">Review</label>
-                            <textarea rows="2" cols="48" name="reviewText" id="reviewText"><?
+                            <textarea rows="2" cols="48" name="reviewText" id="reviewText" required><?
                                 if(isset($review['reviewText'])){echo $review['reviewText'];}
                             ?></textarea>
                         </li>
