@@ -99,7 +99,7 @@
             $dv .= '<form class="form" method="post" action="/phpmotors/reviews/" name="review">';
             $dv .= '<ul><li>';
             $dv .= '<label for="reviewText">Leave a Review</label>';
-            $dv .= '<textarea rows="2" cols="48" name="reviewText" id="reviewText" placeholder=" "></textarea>';
+            $dv .= '<textarea rows="2" cols="48" name="reviewText" id="reviewText" placeholder=" " required></textarea>';
             $dv .= '</li><li>';
             $dv .= '<input class="submit" type="submit" value="Submit">';
             $dv .= '</li></ul>';
